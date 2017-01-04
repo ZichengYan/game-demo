@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>test</title>
+    <style>
+        /* 样式初始化 */
+        
+        body,
+        div,
+        p,
+        span,
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6,
+        ul,
+        li,
+        ol,
+        dl,
+        dt,
+        dd {
+            margin: 0;
+            padding: 0;
+            font-size: 14px;
+            font-family: 宋体;
+        }
+        
+        a {
+            text-decoration: none;
+            color: #666;
+        }
+        
+        input,
+        img {
+            margin: 0;
+            padding: 0;
+            outline-style: none;
+            border: 0 none;
+        }
+        
+        li {
+            list-style: none;
+        }
+        
+        .clearfix:after {
+            content: "";
+            height: 0;
+            line-height: 0;
+            clear: both;
+            display: block;
+            visibility: hidden;
+        }
+        /* 兼容ie浏览器 */
+        
+        .clearfix {
+            zoom: 1;
+        }
+        
+        body{
+            height: 100%;
+            width: 100%;
+            background: url(1-111202193106.jpg) no-repeat;
+            background-size: cover;
+        }
+        
+        .f {
+            height: 80px;
+            width: 400px;
+            /*background-color: green;*/
+            margin: 100px auto;
+            line-height: 50px;
+            overflow: hidden;
+        }
+        
+        .left {
+            float: left;
+            margin-top: 20px;
+        }
+        
+        .right {
+            float: right;
+            margin-top: 20px;
+        }
+        
+        button {
+            height: 40px;
+            width: 125px;
+        }
+        
+        .vs {
+            color: orange;
+            font: 700 30px/2 Simsun;
+            display: block;
+            width: 100px;
+            margin-left: 190px;
+        }
+        
+        .pk {
+            font: 700 30px/1 Simsun;
+            position: absolute;
+            left: 50%;
+            top: 34%;
+            transform: translate(-50%);
+        }
+        
+        .content {
+            width: 500px;
+            height: 10px;
+            /*background-color: green;*/
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%);
+        }
+        
+        .content p {
+            background-color: rgba(0, 0, 0, 0.3);
+            color: yellow;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="f">
+        <button class="left">fighter1</button>
+        <button class="right">fighter2</button>
+        <span class="vs">VS</span>
+    </div>
+    <button class="pk">PK</button>
+    <div class="content">
+        <!-- <p>第<span class="huihe">1</span>回合 : <span class="name1">陈宏子</span> 使用[<span class="skill">技能</span>] 将 <span class="name2">折蓉蓉</span> [<span class="show">打晕了</span>]</p> -->
+    </div>
+    <script src="jquery-1.12.4.min.js"></script>
+    <script>
+        var arr = [ "大爱暖伤","年少无知","寐夜幻影","彩霞仙子","浮光掠影","冷艳红唇","你不懂＄","时至今日","诺言很真","肆无忌惮","屡傻不改","尘埃未定","扛枪灭婊","半醉人间","如若想念","卿是唯一","藏歌苍凉","经年未变","幸福划过","夏末安年","专专专属","轻狂少年","灵慧可人","彼岸雨露","风筝有风","日光倾城","一纸乱言","浅浅dē","ε茈钕う","就杀黑山","望月怀远","半岛旧梦","黑发尤物","____","泄气的爱","冰依湄凌","独自孤单","天意弄人","一米阳光","我的微笑","指尖、微","无爱无碍","法术之王","逍遥仙儿","红玫瑰々","◇◆空城","沁泉吟心","或爱或毁","※地狱★","真的爱你","月影孤单","美眉小铃","单独隔离","可望不行","曲终人散","冷暖自知","狂龙メ战","不知不觉","冷月~孤","一生不变",    "慎独深爱","不即不离","魅雪紫梦","默听花语","常忆难亲","冲开一切","姐的特点","东方莹莹","虚情假意","残花△落","万劫不复","沧桑笑容","如此而已","你的唇角","自演自醉","妞。咱耐","爱情永夜","无处安放","锦上添花","因为寂寞","志善志美","妖娆哥よ","演绎轮回","临窗观景","少妇风范","白色舞步","┊佐岸佑","冷暖自知","一梦繁华","不要错过","脚随心走","月光恋歌","黑白年代","※余温未","虚伪的爱","若近若离","红高跟鞋","阿猫阿狗","鄙弃~`","泪の告白","发酵的恋","彼岸花丛","杳无音信","囚心锁爱","一季★秋","哆啦C梦","疯言疯语","假装#坚","滴水穿石","路人甲<","心为景动","安之若素","封情舞韵","の喵了个","陌恋回忆","玉颜粉骨","天天厨房","我是你的","童心未泯","地老天荒"]
+        var skills = ["赤日轮", "烈日斩", "煌日照", "幽月轮", "银月斩", "寒月耀", "圣明佑", "生死劫", "净世破魔击", "幻光步", "夜叉心", "极乐引", "贪魔体", "光明相", "暗尘弥散", "驱夜断愁", "怖畏暗刑", "业海罪缚", "生灭予夺", "戒火斩", "慈悲愿", "归寂道", "渡厄力","玉虹贯日","平湖断月","黄龙吐翠","九溪弥烟","梦泉虎跑","玉泉鱼跃","云飞玉皇","鹤归孤山","夕照雷锋","霞流宝石","峰插云景","风来吴山","听雷","惊涛","醉月","断潮","探梅","啸日","摘星","莺鸣柳","雪断桥","泉凝月","香疏影","梅隐香","风吹荷","云栖松","踏雪寻梅","映波锁澜","潮鸣弦"]
+        var shows=["受伤了","倒下了","血崩了","哭了","笑了","躺下了"]
+        //按钮点击事件
+        var flag = false;
+        $(".pk").click(function() {
+            //节流
+            if (flag) return;
+            flag = true;
+            //
+            var name, name1, name2, skill, index, timer,show;
+            //控制回合
+            index = 0;
+            //清空对战信息
+            if (!index) $(".content").html("");
+            name = ram(arr.length);
+            timer = setInterval(function() {
+                var str;
+                //被攻击效果
+                show = shows[ram(shows.length)[0]] 
+                //技能
+                name1 = arr[name[0]];
+                name2 = arr[name[1]];
+                //设置对战人名
+                $(".left").html(name1);
+                $(".right").html(name2);
+                //获取随机技能
+                skill = ram(skills.length);
+                ++index;
+                //对战人名切换位置
+                if (index % 2 == 0) {
+                    name1 = arr[name[0]];
+                    name2 = arr[name[1]];
+                } else {
+                    name2 = arr[name[0]];
+                    name1 = arr[name[1]];
+                }
+
+                str = '<p>第<span class="huihe">' + index + '</span>回合 : <span class="name1">' + name1 + '</span> 使用[<span class="skill">' + skills[skill[0]] + '</span>] 将 <span class="name2">' + name2 + '</span> 打的 [<span class="show">'+show+'</span>]</p>';
+                if (index == 15) {
+                    str = '<p>第<span class="huihe">' + index + '</span>回合 : <span class="name1">' + name1 + '</span> 使用[<span class="skill">' + skills[skill[0]] + '</span>] 将 <span class="name2">' + name2 + '</span> 打的 [<span class="show">'+'认输了'+'</span>]</p>';
+                    clearInterval(timer);
+                    console.log("定时器清空")
+                    flag = false;
+                }
+                $(str).appendTo(".content");
+            }, 500)
+        })
+
+
+
+        /**
+         * [ram description]
+         * @param  {[type]} length [数组长度]
+         * @return {[type]}        [数组]
+         */
+        function ram(length) {
+            var a = parseInt(Math.random() * length);
+            var b = parseInt(Math.random() * length);
+            if (a == b) {
+                return ram(length);
+            } else {
+                var arr = [];
+                arr.push(a, b)
+                return arr;
+            }
+
+        }
+
+
+        //创建p标签
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>test</title>
+    <style>
+        /* 样式初始化 */
+        
+        body,
+        div,
+        p,
+        span,
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6,
+        ul,
+        li,
+        ol,
+        dl,
+        dt,
+        dd {
+            margin: 0;
+            padding: 0;
+            font-size: 14px;
+            font-family: 宋体;
+        }
+        
+        a {
+            text-decoration: none;
+            color: #666;
+        }
+        
+        input,
+        img {
+            margin: 0;
+            padding: 0;
+            outline-style: none;
+            border: 0 none;
+        }
+        
+        li {
+            list-style: none;
+        }
+        
+        .clearfix:after {
+            content: "";
+            height: 0;
+            line-height: 0;
+            clear: both;
+            display: block;
+            visibility: hidden;
+        }
+        /* 兼容ie浏览器 */
+        
+        .clearfix {
+            zoom: 1;
+        }
+        
+        body,
+        html {
+            height: 100%;
+            width: 100%;
+            background: url(1-111202193106.jpg) no-repeat;
+            background-size: cover;
+        }
+        
+        .f {
+            height: 80px;
+            width: 400px;
+            /*background-color: green;*/
+            margin: 100px auto;
+            line-height: 50px;
+            overflow: hidden;
+        }
+        
+        .left {
+            float: left;
+            margin-top: 20px;
+        }
+        
+        .right {
+            float: right;
+            margin-top: 20px;
+        }
+        
+        button {
+            height: 40px;
+            width: 100px;
+        }
+        
+        .vs {
+            color: orange;
+            font: 700 30px/2 Simsun;
+            display: block;
+            width: 100px;
+            margin-left: 190px;
+        }
+        
+        .pk {
+            font: 700 30px/1 Simsun;
+            position: absolute;
+            left: 50%;
+            top: 40%;
+            transform: translate(-50%);
+        }
+        
+        .content {
+            width: 500px;
+            height: 10px;
+            /*background-color: green;*/
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%);
+        }
+        
+        .content p {
+            background-color: rgba(0, 0, 0, 0.3);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="f">
+    </div>
+    <button class="pk">PK</button>
+    <div class="content">
+        <p>asdf</p>
+    </div>
+    <script src="jquery-1.12.4.min.js"></script>
+    <script>
+        var arr = ["陈宏子", "秦婷婷", "折蓉蓉", "曹丽娜", "李娜", "谢剑萍"]
+        var index = 0;
+        //按钮点击事件
+
+        $(".pk").click(function() {
+            console.log()
+                // console.log(radom.a,radom.b)
+        })
+
+        function copyUrl2() {
+            var Url2 = document.getElementById("biao1");
+            Url2.select(); // 选择对象
+            document.execCommand("Copy"); // 执行浏览器复制命令
+            alert("已复制好，可贴粘。");
+        }
+    </script>
+    <textarea cols="20" rows="10" id="biao1">用户定义的代码区域</textarea>
+    <input type="button" onClick="copyUrl2()" value="点击复制代码" />
+</body>
+
+</html>
